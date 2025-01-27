@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Sum of Multiples</title>
+        <script>
+          // Function to calculate the sum of multiples of 3 or 5 below 1000
+          function calculateSum() {
+            // Step 1: Initialize the sum variable to 0
+            let sum = 0;
+
+            // Step 2: Loop through all numbers from 1 to 999 (below 1000)
+            for (let i = 1; i < 1000; i++) {
+              // Step 3: Check if the number is divisible by 3 or 5
+              if (i % 3 === 0 || i % 5 === 0) {
+                // If divisible, add the number to the sum
+                sum += i;
+              }
+            }
+
+            // Step 4: Display the result to the user using an alert
+            alert("The sum of all multiples of 3 or 5 below 1000 is: " + sum);
+          }
+        </script>
+    </head>
+    <body>
+        <h1>Sum of Multiples Calculator</h1>
+
+        <!-- Step 1: Add a button for the user to start the calculation -->
+        <p>Click the button to find the sum of all multiples of 3 or 5 below 1000:</p>
+        <button onclick="calculateSum()">Calculate Sum</button> <!-- When clicked, the function 'calculateSum' runs -->
+    </body>
+</html>
