@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Buggage weight checker</title>
+        <script>
+// This function will check the baggage weight
+      function checkWeight() {
+        let weight = document.getElementById("baggageWeight").value; // Get the input value
+        if (weight > 15) {
+          alert("Your bag is overweight!"); // Show an alert if the weight is over 15 kg
+        } else {
+          alert("Your bag is within the weight limit."); // Show an alert if the weight is fine
+        }
+      }
+        </script>
+    </head>
+    <body>
+        <h1>Baggage Weight Checker</h1>
+        <p>Enter your baggage weight (in kg):</p>
+        <input type="number" id="baggageWeight" placeholder="Enter weight">
+        <button onclick="checkWeight()">Submit</button>
+    </body>
+</html>
