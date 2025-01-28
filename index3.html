@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of Multiples</title>
+</head>
+<body>
+    <h1>Find the Sum of Multiples</h1>
+    
+    <label for="a">Enter a: </label>
+    <input type="number" id="a"><br>
+
+    <label for="b">Enter b: </label>
+    <input type="number" id="b"><br>
+
+    <label for="n">Enter n: </label>
+    <input type="number" id="n"><br><br>
+
+    <button onclick="doIt()">Press me!</button>
+
+    <script>
+        function doIt() {
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            var n = document.getElementById("n").value;
+
+            a = parseInt(a);
+            b = parseInt(b);
+            n = parseInt(n);
+
+            var sum = 0;
+
+            for (var i = 0; i < n; i++) {
+                if (i % a === 0 || i % b === 0) {
+                    sum += i;
+                }
+            }
+
+            alert("The sum of multiples of " + a + " or " + b + " below " + n + " is: " + sum);
+        }
+    </script>
+
+</body>
+</html>
