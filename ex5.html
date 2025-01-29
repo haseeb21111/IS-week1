@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Array Multiples Sum</title>
+        <script>
+            function findArraySum() {
+                let numList = document.getElementById("numList").value;
+                let limitList = document.getElementById("limitList").value;
+
+                numList = numList.split(",").map(Number);
+                limitList = limitList.split(",").map(Number);
+
+                let total = 0;
+
+                for (let i = 0; i < limitList.length; i++) {
+                    for (let j = 0; j < numList.length; j++) {
+                        if (limitList[i] % numList[j] === 0) {
+                            total += limitList[i];
+                            break;
+                        }
+                    }
+                }
+
+                alert("The sum is: " + total);
+            }
+        </script>
+    </head>
+    <body>
+        <h2>Find Sum of Multiples in Array</h2>
+        <p>Enter two numbers (separated by commas) and a list of numbers:</p>
+        <input type="text" id="numList" placeholder="Enter two numbers (e.g. 3,5)">
+        <input type="text" id="limitList" placeholder="Enter list (e.g. 1,2,3,4,5,6)">
+        <button onclick="findArraySum()">Calculate</button>
+    </body>
+</html>
