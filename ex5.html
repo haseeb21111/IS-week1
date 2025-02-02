@@ -13,3 +13,19 @@
             }
             return sum;
         }
+        function calculateSum() {
+            let a1 = Number(document.getElementById("factor1").value);
+            let a2 = Number(document.getElementById("factor2").value);
+            let count = Number(document.getElementById("numCount").value);
+
+            let a = [a1, a2];  
+            let l = [];  
+
+            for (let i = 0; i < count; i++) {
+                let inputId = "num" + i;
+                let value = Number(document.getElementById(inputId).value);
+                l.push(value);
+            }
+            let result = f5(a, l);
+            alert("The sum is: " + result);
+        }
