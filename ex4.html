@@ -44,3 +44,21 @@
             }
         }
     </script>
+    </head>
+    <body>
+        <h2>Sum of Multiples Calculator</h2>
+        
+        <label>Enter first number (a):</label>
+        <input type="text" id="numA"><br><br>
+    
+        <label>Enter second number (b):</label>
+        <input type="text" id="numB"><br><br>
+    
+        <label>How many numbers do you want to enter?</label>
+        <input type="text" id="numCount" oninput="createInputs()"><br><br>
+    
+        <div id="inputs"></div>  
+    
+        <button onclick="calculateSum()">Calculate</button>
+    </body>
+    </html>
