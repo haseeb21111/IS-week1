@@ -29,3 +29,18 @@
             let result = f5(a, l);
             alert("The sum is: " + result);
         }
+        function createInputs() {
+            let count = Number(document.getElementById("numCount").value);
+            let inputDiv = document.getElementById("inputs");
+            inputDiv.innerHTML = "";
+
+            for (let i = 0; i < count; i++) {
+                let inputBox = document.createElement("input");
+                inputBox.type = "text";
+                inputBox.id = "num" + i;
+                inputBox.placeholder = "Enter number " + (i + 1);
+                inputDiv.appendChild(inputBox);
+                inputDiv.appendChild(document.createElement("br"));
+            }
+        }
+        
