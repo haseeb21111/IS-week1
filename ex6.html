@@ -1,36 +1,15 @@
-<html>
-    <head>
-        <title>Find Sum of Multiples</title>
-        <script>
-            function findMultiplesSum() {
-                let factors = document.getElementById("factors").value;
-                let numbers = document.getElementById("numbers").value;
-
-                factors = factors.split(",").map(Number);
-                numbers = numbers.split(",").map(Number);
-
-                let total = 0;
-
-                for (let i = 0; i < numbers.length; i++) {
-                    for (let j = 0; j < factors.length; j++) {
-                        if (numbers[i] % factors[j] === 0) {
-                            total += numbers[i];
-                            break;
-                        }
+<head>
+    <title>Exercise 6</title>
+    <script>
+        function f6(a, l) {
+            let sum = 0;
+            for (let i = 0; i < l.length; i++) {
+                for (let j = 0; j < a.length; j++) {
+                    if (l[i] % a[j] === 0) {
+                        sum += l[i];
+                        break;
                     }
                 }
-
-                alert("The sum of multiples is: " + total);
             }
-        </script>
-    </head>
-    <body>
-        <h2>Find Sum of Multiples</h2>
-        <p>Enter numbers (separated by commas) to find their multiples:</p>
-        <input type="text" id="factors" placeholder="Enter factors (e.g. 3,5)">
-        <input type="text" id="numbers" placeholder="Enter numbers (e.g. 1,2,3,4,5,6)">
-        <button onclick="findMultiplesSum()">Calculate Sum</button>
-    </body>
-</html>
-
-
+            return sum;
+        }
