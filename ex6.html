@@ -14,8 +14,8 @@
             return sum;
         }
         function processNumbers() {
-            let a = document.getElementById("factors").value.split(","); 
-            let l = document.getElementById("numbers").value.split(",");  
+            let a = document.getElementById("factors").value.split(",").map(Number); 
+            let l = document.getElementById("numbers").value.split(",").map(Number);  
 
             let result = f6(a, l);  
             alert("Sum of multiples: " + result);
