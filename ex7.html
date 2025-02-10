@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercise 7 - Basket Cost</title>
+    <script>
+        function f7(basket, prices) {
+            let total = 0;
+            
+            for (let item in basket) {
+                if (prices[item]) { 
+                    total += basket[item] * prices[item]; 
+                }
+            }
+
+            return total;
+        }
+
+        function calculateTotal() {
+            let basket = { "apple": 2, "banana": 3, "orange": 1 };
+            let prices = { "apple": 1.5, "banana": 0.5, "orange": 0.8 };
+
+            let result = f7(basket, prices);
+            alert("Total cost: $" + result.toFixed(2));
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Exercise 7 - Basket Total Calculator</h2>
+    
+    <p>Click the button to calculate the total cost of the basket:</p>
+    <button onclick="calculateTotal()">Calculate Total</button>
+
+</body>
+</html>
