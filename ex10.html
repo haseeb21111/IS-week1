@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basket Component</title>
+    <script>
+        class Basket {
+            constructor() {
+                this.items = {};
+            }
+
+            addItem(product, qty) {
+                if (this.items[product]) {
+                    this.items[product] += qty;
+                } else {
+                    this.items[product] = qty;
+                }
+                updateBasketDisplay();
+            }
+
+            getItems() {
+                return this.items;
+            }
+        }
+
+        let myBasket = new Basket();
+
+        function addToBasket() {
+            let product = document.getElementById("product").value;
+            let qty = parseInt(document.getElementById("quantity").value);
+            if (product && qty > 0) {
+                myBasket.addItem(product, qty);
+            }
+        }
+
+        function updateBasketDisplay() {
+            let basketDiv = document.getElementById("basketDisplay");
+            let items = myBasket.getItems();
+            basketDiv.innerHTML = "<h3>Basket Items:</h3>";
+            for (let product in items) {
+                basketDiv.innerHTML += `<p>${product}: ${items[product]}</p>`;
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Basket Component</h2>
+
+    <p>Enter product name:</p>
+    <input type="text" id="product">
+    
+    <p>Enter quantity:</p>
+    <input type="number" id="quantity">
+
+    <br><br>
+    
+    <button onclick="addToBasket()">Add to Basket</button>
+
+    <div id="basketDisplay">
+        <h3>Basket Items:</h3>
+    </div>
+
+</body>
+</html>
