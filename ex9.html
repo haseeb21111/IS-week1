@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basket Testing</title>
+    <script>
+        class Basket {
+            constructor() {
+                this.items = {};
+            }
+
+            addItem(product, qty) {
+                if (this.items[product]) {
+                    this.items[product] += qty;
+                } else {
+                    this.items[product] = qty;
+                }
+            }
+
+            getCost(prices) {
+                let total = 0;
+                for (let product in this.items) {
+                    if (prices[product]) {
+                        total += this.items[product] * prices[product];
+                    }
+                }
+                return total;
+            }
+        }
+
+        let myBasket = new Basket();
+
+        function addToBasket() {
+            let product = document.getElementById("product").value;
+            let qty = parseInt(document.getElementById("quantity").value);
+            myBasket.addItem(product, qty);
+            alert(product + " added to basket!");
+        }
+
+        function calculateTotal() {
+            let prices = { "apple": 1.5, "banana": 0.5, "orange": 0.8 };
+            let totalCost = myBasket.getCost(prices);
+            alert("Total cost: $" + totalCost.toFixed(2));
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Basket Testing Page</h2>
+
+    <p>Enter product name:</p>
+    <input type="text" id="product">
+    
+    <p>Enter quantity:</p>
+    <input type="number" id="quantity">
+
+    <br><br>
+    
+    <button onclick="addToBasket()">Add to Basket</button>
+    <button onclick="calculateTotal()">Get Total Cost</button>
+
+</body>
+</html>
